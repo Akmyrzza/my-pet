@@ -1,7 +1,11 @@
 package cmd
 
-import "fmt"
+import (
+	"github.com/Akmyrzza/my-pet/logger/zap"
+)
 
 func Execute() {
-	fmt.Print("function Execute; package cmd")
+
+	logger := zap.NewLogger()
+	logger.Info("Logger initialized")
 }
