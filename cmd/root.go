@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/Akmyrzza/my-pet/logger/zap"
+	"github.com/Akmyrzza/my-pet/internal/logger/zap"
 )
 
 func Execute() {

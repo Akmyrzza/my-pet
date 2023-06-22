@@ -1,7 +1,8 @@
 package zap
 
 import (
-	"github.com/Akmyrzza/my-pet/logger"
+	"github.com/Akmyrzza/my-pet/internal/logger"
+
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
