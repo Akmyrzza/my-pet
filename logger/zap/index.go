@@ -14,19 +14,15 @@ type ZapLogger struct {
 func NewZapLogger() logger.MyLogger {
 	config := zap.NewProductionConfig()
 	config.EncoderConfig.EncodeTime = zapcore.RFC3339TimeEncoder
-
-	logger, err := config.Build(zap.AddCallerSkip(1))
-	if err != nil {
-		return nil
-	}
+	logger, _ := config.Build(zap.AddCallerSkip(1))
 
 	return &ZapLogger{logger: logger, sugaredLogger: logger.Sugar()}
 }
 
-func (l *ZapLogger) Info(msg string, args ...any) {
-	l.sugaredLogger.Infow(msg, args...)
+func (ZapLogger *ZapLogger) Info(msg string, args ...any) {
+	ZapLogger.sugaredLogger.Infow(msg, args...)
 }
 
-func (l *ZapLogger) Error(msg string, args ...any) {
-	l.sugaredLogger.Errorw(msg, args...)
+func (ZapLogger *ZapLogger) Error(msg string, args ...any) {
+	ZapLogger.sugaredLogger.Errorw(msg, args...)
 }

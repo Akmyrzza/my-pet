@@ -5,7 +5,6 @@ import (
 )
 
 func Execute() {
-
 	logger := zap.NewZapLogger()
 	logger.Info("Logger initialized")
 }
