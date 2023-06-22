@@ -6,6 +6,6 @@ import (
 
 func Execute() {
 
-	logger := zap.NewLogger()
+	logger := zap.NewZapLogger()
 	logger.Info("Logger initialized")
 }

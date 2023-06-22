@@ -1,6 +1,7 @@
 package zap
 
 import (
+	"github.com/Akmyrzza/my-pet/logger"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -10,7 +11,7 @@ type ZapLogger struct {
 	sugaredLogger *zap.SugaredLogger
 }
 
-func NewLogger() *ZapLogger {
+func NewZapLogger() logger.MyLogger {
 	config := zap.NewProductionConfig()
 	config.EncoderConfig.EncodeTime = zapcore.RFC3339TimeEncoder
 
